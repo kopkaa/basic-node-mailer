@@ -1,13 +1,15 @@
 const nodemailer = require('nodemailer');
 const Email = require('email-templates');
+const config = require('./authData');
+
 
 const transporter = nodemailer.createTransport({
-		host: 'smtp.seznam.cz',
-		port: 465,
+		host: config.HOST,
+		port: config.PORT,
 		secure: true,
 		auth: {
-			user:'cumlikator1@email.cz',
-			pass: 'lamasvetajahodapohoda'
+			user: config.USER,
+			pass: config.PASSWORD
 		},
 		tls: {
           rejectUnauthorized: false
@@ -23,8 +25,8 @@ const email = new Email({
  email.send({
       template: 'hello',
       message: {
-        from: 'cumlikator1@email.cz',
-        to: 'kopkayan@outlook.cz',
+        from: 'example@email.com',
+        to: 'example2@email.com',
       },
       locals: {
         fname: 'John',
