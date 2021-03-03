@@ -13,6 +13,6 @@
     "email-templates": "^7.1.0",
     "handlebars": "^4.7.6",
     "nodemailer": "^6.4.10",
-    "pug": "^3.0.0"
+    "pug": "^3.0.1"
   }
 }
